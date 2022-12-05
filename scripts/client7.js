@@ -217,7 +217,7 @@ scene.add( light3 );
 
   var mesh;
       const loader = new GLTFLoader().load(
-          "assets/trashtower.glb",
+          "assets/Desk.glb",
           function (gltf) {
               gltf.scene.traverse(function (child) {
                   if (child.isMesh) {
