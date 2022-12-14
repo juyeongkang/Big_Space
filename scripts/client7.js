@@ -52,22 +52,36 @@ function init() {
 
   // Define basic scene parameters
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xffffff);
-  scene.fog = new THREE.Fog(0xffffff, 20, 105);
+  scene.background = new THREE.Color(0x172026);
+  //scene.fog = new THREE.Fog(0xffffff, 20, 105);
 
   // Define scene lighting
   const light = new THREE.HemisphereLight(0xffffff, 0x15450f, 2);
   light.position.set(0.5, 1, 0.75);
   scene.add(light);
 
-  const light1 = new THREE.PointLight( 0xffffff, 2, 60 );
-  light.position.set( 70, 65, 50 );
+  const al = new THREE.AmbientLight(0xffffff,0.5);
+  scene.add(al);
+
+  const dl = new THREE.DirectionalLight(0xff0000,0.5);
+  dl.position.set(0,2,0);
+
+
+  const light1 = new THREE.PointLight( 0xF2DEA0, 10, 150 );
+  light1.position.set( 5, 60, -90);
   scene.add( light1 );
 
-  const light3 = new THREE.PointLight( 0x063970
-, 9, 50 );
-light.position.set( -10, 120, 90 );
-scene.add( light3 );
+  // light.position.set( 10, 25, 20 );
+
+
+  // const light2 = new THREE.PointLight( 0xffffff, 7, 60 );
+  // light.position.set( -2, 25, 4 );
+  // scene.add( light2 );
+
+//   const light3 = new THREE.PointLight( 0x063970
+// , 9, 50 );
+// light.position.set( -10, 120, 90 );
+// scene.add( light3 );
 
   // Define controls
   controls = new PointerLockControls(camera, document.body);
@@ -217,7 +231,7 @@ scene.add( light3 );
 
   var mesh;
       const loader = new GLTFLoader().load(
-          "assets/Desk.glb",
+          "assets/myroom.glb",
           function (gltf) {
               gltf.scene.traverse(function (child) {
                   if (child.isMesh) {
@@ -226,7 +240,7 @@ scene.add( light3 );
               mesh = gltf.scene;
               mesh.position.set(22, 4, -35);
               mesh.rotation.set(0, 110, 0);
-              mesh.scale.set(5, 5, 5);
+              mesh.scale.set(19, 19, 19);
               // Add model to scene
               scene.add(mesh);
 
