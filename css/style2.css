@@ -94,7 +94,7 @@ button {
   color: black;
   border: 2px solid #67595E;
   font-family: 'Titillium Web', sans-serif;
-  font-size: 16px;
+  font-size: 25px;
 
 }
 
@@ -107,7 +107,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 25px;
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
